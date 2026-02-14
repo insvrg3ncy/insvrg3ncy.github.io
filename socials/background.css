@@ -157,10 +157,130 @@ body::after {
   text-shadow: 0 0 8px rgba(255, 76, 76, 0.5);
 }
 
+.social-link:active {
+  opacity: 0.7;
+}
+
+.social-link:focus-visible {
+  outline: 2px solid #ff4c4c;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 .socials-list code {
   background: rgba(255, 76, 76, 0.12);
   padding: 2px 8px;
   border-radius: 3px;
   font-size: 12px;
   color: rgba(230, 230, 230, 0.9);
+}
+
+.home-button {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 24px;
+  background: rgba(10, 10, 15, 0.85);
+  border: 1px solid rgba(255, 0, 0, 0.25);
+  box-shadow: 0 0 8px rgb(255,0,0,0.6), inset 0 0 0 1px rgba(0,0,0,0.9);
+  color: #e6e6e6;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  z-index: 20;
+}
+
+.home-button:hover {
+  border-color: rgba(255, 80, 80, 0.6);
+  box-shadow: 0 0 12px rgba(255,0,0,0.6), inset 0 0 0 1px rgba(0,0,0,0.9);
+  text-shadow: 0 0 8px #ff4c4c;
+  color: #ffffff;
+}
+
+.home-button:active {
+  transform: translateX(-50%) scale(0.97);
+  box-shadow: 0 0 8px rgba(255,0,0,0.4), inset 0 0 0 1px rgba(0,0,0,0.9);
+}
+
+.home-button:focus-visible {
+  outline: 2px solid #ff4c4c;
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .content {
+    top: 15%;
+    padding: 20px 24px;
+  }
+
+  .content h1 {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+  }
+
+  .social-name {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .social-link {
+    font-size: 12px;
+  }
+
+  .image img {
+    max-height: 60vh;
+  }
+
+  .home-button {
+    font-size: 12px;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    top: 20%;
+    padding: 16px 20px;
+    width: 95%;
+  }
+
+  .content h1 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .social-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 0;
+  }
+
+  .social-name {
+    font-size: 0.95rem;
+  }
+
+  .social-link {
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .image.left,
+  .image.right {
+    opacity: 0.3;
+  }
+
+  .image img {
+    max-height: 50vh;
+  }
+
+  .home-button {
+    top: 12px;
+    font-size: 11px;
+    padding: 7px 16px;
+  }
 }

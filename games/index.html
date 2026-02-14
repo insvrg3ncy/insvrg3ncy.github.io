@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Games Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games - Random Daws</title>
+  <link rel="icon" type="image/x-icon" href="../static/favicons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../static/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../static/favicons/site.webmanifest">
+  <link rel="mask-icon" href="../static/favicons/safari-pinned-tab.svg" color="#ff4c4c">
+  <meta name="msapplication-TileColor" content="#0a0a0a">
+  <meta name="msapplication-config" content="../static/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="stylesheet" href="../Resources/Bahnschrift.css">
   <link rel="stylesheet" href="../background.css">
 </head>
 <body>
 
-  <div class="top-username" id="topName">Dirma</div>
+  <div class="top-username clickable" id="topName" onclick="window.location.href='../'">Dirma</div>
 
   <div class="page-figures">
-    <div class="image center"><img src="hostage.png" alt=""></div>
+    <div class="image center"><img src="../static/hostage.png" alt=""></div>
   </div>
 
   <main class="page-content">
@@ -18,11 +30,11 @@
       <h1>My games</h1>
       <p>Add text to <code>games.paragraphs</code> in <code>config.js</code> block.</p>
     </div>
-    <div style="height:200px;"></div>
+    <div class="spacer"></div>
   </main>
 
   <div id="pluv-container">
-    <img src="../pluv.png" id="pluv" alt="pluv">
+    <img src="../static/pluv.png" id="pluv" alt="pluv">
     <div id="pluv-bubble"></div>
   </div>
 
