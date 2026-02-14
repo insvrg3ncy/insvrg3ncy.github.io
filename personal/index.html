@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../background.css">
+</head>
+<body>
+
+  <div class="top-username" id="topName">Personal</div>
+
+  <div class="page-figures">
+    <div class="image center"><img src="hostage.png" alt=""></div>
+  </div>
+
+  <main class="page-content personal-page">
+    <div class="personal-content" id="personal-content">
+      <h1>Personal</h1>
+      <p>Заполни блок <code>personal</code> в <code>config.js</code>.</p>
+    </div>
+    <div style="height:200px;"></div>
+  </main>
+
+
+
+  <script src="../config.js"></script>
+  <script>
+    (function () {
+      var centerEl = document.querySelector(".page-figures .image.center");
+      if (centerEl) setTimeout(function () { centerEl.classList.add("show"); }, 400);
+    })();
+  </script>
+  <script>
+    (function () {
+      const block = document.getElementById("personal-content");
+      if (typeof window.SITE_CONFIG !== "undefined" && window.SITE_CONFIG.personal) {
+        const p = window.SITE_CONFIG.personal;
+        block.innerHTML = "<h1>" + (p.title || "Personal") + "</h1>" +
+          (p.subtitle ? "<p class=\"subtitle\">" + p.subtitle + "</p>" : "") +
+          (p.paragraphs && p.paragraphs.length
+            ? p.paragraphs.map(function (text) { return "<p>" + text + "</p>"; }).join("")
+            : "<p>Добавь текст в <code>config.js</code> → <code>personal.paragraphs</code></p>");
+      }
+      const words = ["Personal", "About", "::CYBERWORLD::"];
+      let index = 0;
+      const topName = document.getElementById("topName");
+      if (topName && window.SITE_CONFIG && window.SITE_CONFIG.personal && window.SITE_CONFIG.personal.title) {
+        words[0] = window.SITE_CONFIG.personal.title;
+      }
+      setInterval(function () {
+        topName.textContent = words[index];
+        index = (index + 1) % words.length;
+      }, 1000);
+    })();
+  </script>
+
+</body>
+</html>

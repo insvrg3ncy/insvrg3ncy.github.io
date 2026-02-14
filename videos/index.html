@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Videos</title>
+  <link rel="stylesheet" href="../background.css">
+</head>
+<body>
+
+  <div class="top-username" id="topName">Videos</div>
+
+  <div class="page-figures">
+    <div class="image center"><img src="hostage.png" alt=""></div>
+  </div>
+
+  <main class="page-content">
+    <div class="content-block" id="videos-content">
+      <h1>Videos</h1>
+      <p>Add text to <code>videos.paragraphs</code> in <code>config.js</code> block.</p>
+    </div>
+    <div style="height:200px;"></div>
+  </main>
+
+
+
+  <div id="pluv-container">
+    <img src="../pluv.png" id="pluv" alt="pluv">
+    <div id="pluv-bubble"></div>
+  </div>
+
+  <script src="../config.js"></script>
+  <script src="../pluv.js"></script>
+  <script>
+    (function () {
+      var leftEl = document.querySelector(".page-figures .image.left");
+      var centerEl = document.querySelector(".page-figures .image.center");
+      var rightEl = document.querySelector(".page-figures .image.right");
+      if (leftEl) setTimeout(function () { leftEl.classList.add("show"); }, 200);
+      if (centerEl) setTimeout(function () { centerEl.classList.add("show"); }, 400);
+      if (rightEl) setTimeout(function () { rightEl.classList.add("show"); }, 500);
+    })();
+  </script>
+  <script>
+    (function () {
+      var block = document.getElementById("videos-content");
+      if (block && typeof window.SITE_CONFIG !== "undefined" && window.SITE_CONFIG.videos) {
+        var v = window.SITE_CONFIG.videos;
+        block.innerHTML = "<h1>" + (v.title || "Videos") + "</h1>" +
+          (v.subtitle ? "<p class=\"subtitle\">" + v.subtitle + "</p>" : "") +
+          (v.paragraphs && v.paragraphs.length
+            ? v.paragraphs.map(function (text) { return "<p>" + text + "</p>"; }).join("")
+            : "<p>Add text to <code>config.js</code> → <code>videos.paragraphs</code> block.</p>");
+      }
+      var words = ["Videos", "Coming soon", "::CYBERWORLD::"];
+      var index = 0;
+      var topName = document.getElementById("topName");
+      if (topName && window.SITE_CONFIG && window.SITE_CONFIG.videos && window.SITE_CONFIG.videos.title) {
+        words[0] = window.SITE_CONFIG.videos.title;
+      }
+      setInterval(function () {
+        topName.textContent = words[index];
+        index = (index + 1) % words.length;
+      }, 1000);
+    })();
+  </script>
+
+</body>
+</html>

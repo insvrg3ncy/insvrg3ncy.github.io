@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Daws</title>
+  <link rel="stylesheet" href="background.css">
+</head>
+<body>
+
+ 
+  <div class="top-username" id="topName">Dirma</div>
+
+
+  <main class="page-content">
+
+   
+    <div class="menu-container">
+      <div class="menu-left">
+        <a href="videos/" class="menu-button">VIDEOS</a>
+        <a href="games/" class="menu-button">GAMES</a>
+      </div>
+      <div class="menu-center"></div>
+      <div class="menu-right">
+        <a href="personal/" class="menu-button">PERSONAL</a>
+        <a href="socials/" class="menu-button">SOCIALS</a>
+      </div>
+    </div>
+
+    <div id="character-container">
+      <img src="1.png" id="character" alt="Character">
+    </div>
+
+    <!-- space for scroll-->
+    <div style="height:100px;"></div>
+
+  </main>
+
+
+  <script src="character.js"></script>
+
+ 
+  <script>
+    const words = [
+      "Random Art", "2026", "::CYBERWORLD::", "Chinese Viruses", "Rolling Kush",
+      "Z-City", "Homicided", "Homigrad", "Gmod", "Madness Combat", "Fulcrum Come in",
+      "LIMP PUMPO", "Question your reality", "Go try Terraria", "Go try Project Zomboid",
+      "You are a SlugCat", "Vote for Daniels!", "It was the weed", "Gmod", "Fergal",
+      "Half-Life 3 will never come out", "De_nuke.Bsp", "Portal 2", "GM_Construct",
+      "2fort.bsp", "I could eat a horse", "I love my girlfriend 🤤", "Acidic Pussy",
+      "Subscribe 2 @moridolbaeb", "Subcribe 2 Wholestolemychips", "Validated by Eggy",
+      "Dirmintor", "She gon call me baby boo", "Evil Gang 2023", "Dj Autism server 2022",
+      "This website under construction", "dead upon shot registering", "missed due to resolver",
+      "Custom Lua", "None of these a Rare", "REPOOOO BUGGGINNN", "The long drive", "BaroTruama",
+      "Aimware"
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(words);
+
+    let index = 0;
+    const topName = document.getElementById("topName");
+
+  
+    setInterval(() => {
+      const text = words[index];
+      document.title = text; 
+      topName.textContent = text;
+      index++;
+      if (index >= words.length) {
+        shuffle(words);
+        index = 0;
+      }
+    }, 1000);
+  </script>
+
+<div id="pluv-container">
+  <img src="pluv.png" id="pluv" alt="pluv">
+  <div id="pluv-bubble"></div>
+</div>
+
+<script src="pluv.js"></script>
+
+
+</body>
+</html>
