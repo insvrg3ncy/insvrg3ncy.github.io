@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Personal</title>
+  <title>Personal - Random Daws</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../static/favicons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../static/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../static/favicons/site.webmanifest">
+  <link rel="mask-icon" href="../static/favicons/safari-pinned-tab.svg" color="#ff4c4c">
+  <meta name="msapplication-TileColor" content="#0a0a0a">
+  <meta name="msapplication-config" content="../static/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="stylesheet" href="../Resources/Bahnschrift.css">
   <link rel="stylesheet" href="../background.css">
 </head>
 <body>
 
-  <div class="top-username" id="topName">Personal</div>
+  <div class="top-username clickable" id="topName" onclick="window.location.href='../'">Personal</div>
 
   <div class="page-figures">
-    <div class="image center"><img src="hostage.png" alt=""></div>
+    <div class="image center"><img src="../static/hostage.png" alt=""></div>
   </div>
 
   <main class="page-content personal-page">
@@ -19,11 +30,17 @@
       <h1>Personal</h1>
       <p>Заполни блок <code>personal</code> в <code>config.js</code>.</p>
     </div>
-    <div style="height:200px;"></div>
+    <div class="spacer"></div>
   </main>
 
 
 
+  <div id="pluv-container">
+    <img src="../static/pluv.png" id="pluv" alt="pluv">
+    <div id="pluv-bubble"></div>
+  </div>
+
+  <script src="../pluv.js"></script>
   <script src="../config.js"></script>
   <script>
     (function () {
